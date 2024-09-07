@@ -1,0 +1,12 @@
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\bin\Debug\net8.0\Actio.Common.deps.json
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\bin\Debug\net8.0\Actio.Common.dll
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\bin\Debug\net8.0\Actio.Common.pdb
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.AssemblyInfoInputs.cache
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.AssemblyInfo.cs
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.csproj.CoreCompileInputs.cache
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.sourcelink.json
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.dll
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\refint\Actio.Common.dll
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\Actio.Common.pdb
+F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\obj\Debug\net8.0\ref\Actio.Common.dll
