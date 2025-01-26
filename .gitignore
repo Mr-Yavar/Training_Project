@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MicroServicesLearning/Packt_.Net/Actio/.vs
+/MicroServicesLearning/Packt_.Net/Actio/src/Actio.Api/obj/Release/net8.0
+/MicroServicesLearning/Packt_.Net/Actio/src/Actio.Common/obj/Release/net8.0
+/MicroServicesLearning/Packt_.Net/Actio/src/Actio.Services.Activities/obj/Debug/net8.0
+/MicroServicesLearning/Packt_.Net/Actio/src/Actio.Services.Identity/obj/Release/net8.0
+/MicroServicesLearning/Packt_.Net/Actio/src/Actio.Services.Activities/obj/Release/net8.0
