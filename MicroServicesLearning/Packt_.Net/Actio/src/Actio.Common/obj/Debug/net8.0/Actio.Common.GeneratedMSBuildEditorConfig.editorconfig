@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Actio.Common
-build_property.ProjectDir = F:\temporary\Learning\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\
+build_property.ProjectDir = E:\Projects\Training_Project\MicroServicesLearning\Packt_.Net\Actio\src\Actio.Common\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
