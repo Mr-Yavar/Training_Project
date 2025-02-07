@@ -1,14 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FirstController;
-use App\Http\Controllers\TaskController;
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::any('/',function(){
+    return response()->json("",200,"");
 });
 
 
 
-Route::get('/create',[TaskController::class,"create"]);
-Route::any('/',[TaskController::class,"store"])->name("store");
+//Route::get('/create',[TaskController::class,"create"]);
+// Route::any('/',[TaskController::class,"store"])->name("store");
