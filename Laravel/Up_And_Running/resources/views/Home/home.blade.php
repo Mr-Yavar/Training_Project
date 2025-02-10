@@ -8,11 +8,11 @@
 
 
 @section('container')
+The number is {{ json_encode($users) }}<br>
 
-
-    @for ($i = 0; $i < 10; $i++)
-         The number is {{ $i }}<br>
-    @endfor
+    {{-- @foreach($users as $user)
+        The number is {{ json_encode() }}<br>
+    @endforeach --}}
 @endsection
 
 @section('footerScript')

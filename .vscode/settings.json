@@ -5,6 +5,28 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
-    }
+        "**/Thumbs.db": true,
+        "[!L]*/**": true,
+        "L[!a]*/**": true,
+        "La[!r]*/**": true,
+        "Lar[!a]*/**": true,
+        "Lara[!v]*/**": true,
+        "Larav[!e]*/**": true,
+        "Larave[!l]*/**": true,
+        "Laravel/[!U]*/**": true,
+        "Laravel/U[!p]*/**": true,
+        "Laravel/Up[!_]*/**": true,
+        "Laravel/Up_[!A]*/**": true,
+        "Laravel/Up_A[!n]*/**": true,
+        "Laravel/Up_An[!d]*/**": true,
+        "Laravel/Up_And[!_]*/**": true,
+        "Laravel/Up_And_[!R]*/**": true,
+        "Laravel/Up_And_R[!u]*/**": true,
+        "Laravel/Up_And_Ru[!n]*/**": true,
+        "Laravel/Up_And_Run[!n]*/**": true,
+        "Laravel/Up_And_Runn[!i]*/**": true,
+        "Laravel/Up_And_Runni[!n]*/**": true,
+        "Laravel/Up_And_Runnin[!g]*/**": true
+    },
+    "php.executablePath": "php"
 }
