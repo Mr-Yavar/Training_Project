@@ -1,66 +1,90 @@
 <template>
-  <VChart class="chart" :option="option" />
-  
-  <input style="display: block;width: 100%" type="range" v-model="R" :max="Math.random()*1000" min="0"  />
+  <VChart class="chart" :option="option" v-memo="[R]" />
+
+  <input
+    style="display: block; width: 100%"
+    type="range"
+    v-model="R"
+   max="1"
+   step="0.0001"
+    min="0"
+  />
 
   {{ R }}
 </template>
 
 <script setup>
 import { use } from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
-import { PieChart } from "echarts/charts";
+import { CanvasRenderer, SVGRenderer } from "echarts/renderers";
+import { LineChart, PieChart } from "echarts/charts";
 import {
   TitleComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
+  GridComponent,
 } from "echarts/components";
 import VChart, { THEME_KEY } from "vue-echarts";
 import { ref, provide, computed } from "vue";
-import { gradientDescentLinearRegression } from "./utils/Regression";
+import { gradientDescentLinearRegression, sequentialGradientDescentLinearRegression } from "./utils/Regression";
 
 use([
-  CanvasRenderer,
+  SVGRenderer,
   PieChart,
+  LineChart,
   TitleComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
+  GridComponent,
 ]);
 
 provide(THEME_KEY, "light");
-console.log(gradientDescentLinearRegression([[1]],[1],0.0001,100));
-const option = computed(()=>({
+
+const option = computed(() => ({
   title: {
-    text: "Traffic Sources",
-    left: "center"
+    left: "center",
   },
-  tooltip: {
-    trigger: "item",
-    formatter: "{a} <br/>{b} : {c} ({d}%)"
+  legend:{
+show:true,
   },
-  legend: {
-    orient: "vertical",
-    left: "left",
-    data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"]
+
+  xAxis: {
+    type: "value",
+  },
+  yAxis: {
+    type: "value",
   },
   series: [
     {
-      name: "Traffic Sources",
-      type: "pie",
-      radius: "55%",
-      center: ["50%", "60%"],
-      data: [
-        { value: 335, name: "Direct" },
-        { value: 310, name: "Email" },
-        { value: 234, name: "Ad Networks" },
-        { value: 135, name: "Video Ads" },
-        { value: R.value, name: "Search Engines" }
-      ],
-     
-    }
-  ]
+      name: "GD",
+      type: "line",
+      lineStyle: {
+        width: 1,
+      },
+      symbolSize: 0.1,
+      data: gradientDescentLinearRegression(
+        [[1,2], [2,3]],
+        [1, 2],
+        R.value,
+        1000
+      ).mseHistory.map((x, i) => [i, x]),
+    },
+    {
+      name: "CD",
+      type: "line",
+      lineStyle: {
+        width: 1,
+       
+      },
+      symbolSize: 0.1,
+      data: sequentialGradientDescentLinearRegression(
+        [[1,2], [2,3]],
+        [1, 2],
+        R.value,
+        1000
+      ).mseHistory.map((x, i) => [i, x]),
+    },
+  ],
 }));
-
 
 const R = ref(0.0001);
 </script>
