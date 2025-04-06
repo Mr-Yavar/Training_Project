@@ -3,10 +3,18 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
-        "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        
+        "**/CVS": true,
+        "[!V]*/**": true,
+        "V[!u]*/**": true,
+        "Vu[!e]*/**": true,
+        "Vue/[!G]*/**": true,
+        "Vue/G[!D]*/**": true,
+        "Vue/GD[!v]*/**": true,
+        "Vue/GDv[!s]*/**": true,
+        "Vue/GDvs[!C]*/**": true,
+        "Vue/GDvsC[!D]*/**": true
     },
     "php.executablePath": "php"
 }
