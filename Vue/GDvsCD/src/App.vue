@@ -1,15 +1,16 @@
 <template>
+  {{ option?.R ?? "="}}
   <VChart class="chart" :option="option.opt" />
 
   <input
     style="display: block; width: 100%"
+    
     type="range"
     v-model="R"
-    max="1"
-    step="0.0001"
-    min="0"
+    max="0.00000001"
+    step="0.000000001"
+    min="0.00000000001"
   />
-
   {{ R }}
 {{ t }}
 </template>
@@ -25,7 +26,8 @@ import {
   GridComponent,
 } from "echarts/components";
 import VChart, { THEME_KEY } from "vue-echarts";
-import { ref, provide, computed } from "vue";
+import { ref, provide, computed, watch } from "vue";
+import debounce from 'lodash.debounce'
 
 
 use([
@@ -40,8 +42,11 @@ use([
 
 provide(THEME_KEY, "light");
 const option = ref({opt:{}});
-const t = computed(async () => {
-  const req = await fetch("http://localhost:3000/api/calculate/" + R.value, {
+
+const R = ref(0.0000000001);
+
+watch(R, debounce(async () => {
+  const req = await fetch("http://localhost:5000/Calc/Get?eta=" + Number(R.value)+"&numIter=500", {
     method: "GET",
   });
 
@@ -51,11 +56,9 @@ const t = computed(async () => {
   const res = JSON.parse(data);
   
 
-
+  option.value.R = R.value;
   option.value.opt= {
-    title: {
-      left: "center",
-    },
+ 
     legend: {
       show: true,
     },
@@ -74,24 +77,24 @@ const t = computed(async () => {
           width: 1,
         },
         symbolSize: 0.1,
-        data: res.GD.map((x, i) => [i, x]),
+        data: res.gd.costHistory.map((x, i) => [i, x]),
       },
-      {
-        name: "CD",
-        type: "line",
-        lineStyle: {
-          width: 1,
-        },
-        symbolSize: 0.1,
-        data: res.CD.map((x, i) => [i, x]),
-      },
+      // {
+      //   name: "CD",
+      //   type: "line",
+      //   lineStyle: {
+      //     width: 1,
+      //   },
+      //   symbolSize: 0.1,
+      //   data: res.cd.costHistory.map((x, i) => [i, x]),
+      // },
     ],
   };
 
   return {};
-});
+}, 500))
 
-const R = ref(0.0001);
+
 </script>
 
 <style scoped>
